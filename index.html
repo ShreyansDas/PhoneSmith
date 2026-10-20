@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PhoneSmith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand"><h1>Phone<span>Smith</span></h1><small>WORKSHOP · BENCH 01</small></div>
+    <nav class="steps" id="steps" aria-label="Build steps"></nav>
+    <div class="tools">
+      <button class="icon-btn" id="undo" title="Undo (Ctrl+Z)">↶<span class="lbl">Undo</span></button>
+      <button class="icon-btn" id="redo" title="Redo (Ctrl+Shift+Z)">↷<span class="lbl">Redo</span></button>
+      <button class="icon-btn" id="rand" title="Build a random valid phone">⚄<span class="lbl">Randomize</span></button>
+    </div>
+  </header>
+  <aside class="drawer">
+    <div class="drawer-body" id="drawer"></div>
+    <div class="drawer-foot" id="foot"></div>
+  </aside>
+  <main class="viewport" id="viewport">
+    <div class="hud" id="hud"><div class="t" id="hud-t">Classic</div><div class="m" id="hud-d"></div><div class="m" id="hud-w"></div></div>
+    <div class="hint" id="hint" hidden></div>
+    <div class="inspector" id="insp" hidden></div>
+    <div class="pip" id="pip" hidden><span id="pip-l">Telescope · 8×</span></div>
+    <div class="toast" id="toast" style="opacity:0"></div>
+    <div class="viewbar" id="viewbar">
+      <button data-view="front">Front</button><button data-view="back">Back</button><button data-view="left">Left</button><button data-view="right">Right</button><button data-view="top">Top</button><button data-view="bottom">Bottom</button>
+      <span class="sep"></span><button data-view="spin" id="spin" aria-pressed="false">Auto-spin</button>
+    </div>
+  </main>
+</div>
+<div class="modal" id="modal" hidden></div>
+<script src="three.min.js"></script>
+<script src="OrbitControls.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
